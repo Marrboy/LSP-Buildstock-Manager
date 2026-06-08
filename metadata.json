@@ -1,0 +1,8 @@
+{
+  "name": "Remix: JWP BuildStock Manager",
+  "description": "Modern Laravel inventory system for JWP Building Store with automated stock tracking, reporting, and a sleek Tailwind CSS dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

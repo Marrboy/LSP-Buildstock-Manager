@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .page { fill: #f8fafc; }
+      .title { font: 800 30px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px Arial, sans-serif; fill: #475569; }
+      .table { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .header { fill: #4f46e5; }
+      .headerText { font: 800 18px Arial, sans-serif; fill: #ffffff; }
+      .field { font: 14px Consolas, monospace; fill: #0f172a; }
+      .fieldMuted { font: 14px Consolas, monospace; fill: #475569; }
+      .pk { fill: #fef3c7; stroke: #f59e0b; }
+      .fk { fill: #dbeafe; stroke: #2563eb; }
+      .uk { fill: #dcfce7; stroke: #16a34a; }
+      .badgeText { font: 700 11px Arial, sans-serif; fill: #0f172a; }
+      .line { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .rel { font: 700 13px Arial, sans-serif; fill: #334155; }
+      .noteBox { fill: #eef2ff; stroke: #c7d2fe; stroke-width: 1.2; }
+      .note { font: 13px Arial, sans-serif; fill: #3730a3; }
+    </style>
+  </defs>
+
+  <rect class="page" width="1500" height="900"/>
+  <text class="title" x="60" y="55">ERD Sistem Inventori Toko Buku JWP</text>
+  <text class="subtitle" x="60" y="82">Hasil implementasi rancangan database: users, kategori_barang, barang, transaksi, dan detail_transaksi.</text>
+
+  <g transform="translate(65,145)">
+    <rect class="table" width="310" height="300" rx="14"/>
+    <rect class="header" width="310" height="48" rx="14"/>
+    <text class="headerText" x="22" y="31">users</text>
+    <text class="field" x="24" y="78">id_user</text><rect class="pk" x="225" y="61" width="36" height="22" rx="6"/><text class="badgeText" x="235" y="76">PK</text>
+    <text class="field" x="24" y="108">nama</text>
+    <text class="field" x="24" y="138">email</text><rect class="uk" x="225" y="121" width="36" height="22" rx="6"/><text class="badgeText" x="235" y="136">UK</text>
+    <text class="field" x="24" y="168">password</text>
+    <text class="field" x="24" y="198">role</text>
+    <text class="field" x="24" y="228">status</text>
+    <text class="fieldMuted" x="24" y="258">created_at</text>
+    <text class="fieldMuted" x="24" y="288">updated_at</text>
+  </g>
+
+  <g transform="translate(65,545)">
+    <rect class="table" width="330" height="220" rx="14"/>
+    <rect class="header" width="330" height="48" rx="14"/>
+    <text class="headerText" x="22" y="31">kategori_barang</text>
+    <text class="field" x="24" y="78">id_kategori</text><rect class="pk" x="245" y="61" width="36" height="22" rx="6"/><text class="badgeText" x="255" y="76">PK</text>
+    <text class="field" x="24" y="108">nama_kategori</text>
+    <text class="field" x="24" y="138">deskripsi</text>
+    <text class="fieldMuted" x="24" y="168">created_at</text>
+    <text class="fieldMuted" x="24" y="198">updated_at</text>
+  </g>
+
+  <g transform="translate(545,500)">
+    <rect class="table" width="340" height="330" rx="14"/>
+    <rect class="header" width="340" height="48" rx="14"/>
+    <text class="headerText" x="22" y="31">barang</text>
+    <text class="field" x="24" y="78">id_barang</text><rect class="pk" x="255" y="61" width="36" height="22" rx="6"/><text class="badgeText" x="265" y="76">PK</text>
+    <text class="field" x="24" y="108">kode_barang</text><rect class="uk" x="255" y="91" width="36" height="22" rx="6"/><text class="badgeText" x="265" y="106">UK</text>
+    <text class="field" x="24" y="138">nama_barang</text>
+    <text class="field" x="24" y="168">id_kategori</text><rect class="fk" x="255" y="151" width="36" height="22" rx="6"/><text class="badgeText" x="265" y="166">FK</text>
+    <text class="field" x="24" y="198">satuan</text>
+    <text class="field" x="24" y="228">stok</text>
+    <text class="field" x="24" y="258">stok_minimum</text>
+    <text class="field" x="24" y="288">status</text>
+    <text class="fieldMuted" x="24" y="318">created_at, updated_at</text>
+  </g>
+
+  <g transform="translate(555,145)">
+    <rect class="table" width="340" height="270" rx="14"/>
+    <rect class="header" width="340" height="48" rx="14"/>
+    <text class="headerText" x="22" y="31">transaksi</text>
+    <text class="field" x="24" y="78">id_transaksi</text><rect class="pk" x="255" y="61" width="36" height="22" rx="6"/><text class="badgeText" x="265" y="76">PK</text>
+    <text class="field" x="24" y="108">tanggal</text>
+    <text class="field" x="24" y="138">jenis_transaksi</text>
+    <text class="field" x="24" y="168">id_user</text><rect class="fk" x="255" y="151" width="36" height="22" rx="6"/><text class="badgeText" x="265" y="166">FK</text>
+    <text class="field" x="24" y="198">total_item</text>
+    <text class="field" x="24" y="228">catatan</text>
+    <text class="fieldMuted" x="24" y="258">created_at</text>
+  </g>
+
+  <g transform="translate(1090,320)">
+    <rect class="table" width="350" height="260" rx="14"/>
+    <rect class="header" width="350" height="48" rx="14"/>
+    <text class="headerText" x="22" y="31">detail_transaksi</text>
+    <text class="field" x="24" y="78">id_detail</text><rect class="pk" x="260" y="61" width="36" height="22" rx="6"/><text class="badgeText" x="270" y="76">PK</text>
+    <text class="field" x="24" y="108">id_transaksi</text><rect class="fk" x="260" y="91" width="36" height="22" rx="6"/><text class="badgeText" x="270" y="106">FK</text>
+    <text class="field" x="24" y="138">id_barang</text><rect class="fk" x="260" y="121" width="36" height="22" rx="6"/><text class="badgeText" x="270" y="136">FK</text>
+    <text class="field" x="24" y="168">jumlah</text>
+    <text class="field" x="24" y="198">stok_sebelum</text>
+    <text class="field" x="24" y="228">stok_sesudah</text>
+  </g>
+
+  <path class="line" d="M 375 300 C 450 300, 480 280, 555 280"/>
+  <text class="rel" x="420" y="268">1 user membuat banyak transaksi</text>
+
+  <path class="line" d="M 395 655 C 455 655, 490 665, 545 665"/>
+  <text class="rel" x="420" y="642">1 kategori memiliki banyak barang</text>
+
+  <path class="line" d="M 895 280 C 980 280, 1015 410, 1090 410"/>
+  <text class="rel" x="935" y="318">1 transaksi memiliki banyak detail</text>
+
+  <path class="line" d="M 885 665 C 980 665, 1015 520, 1090 520"/>
+  <text class="rel" x="925" y="650">1 barang dicatat di banyak detail</text>
+
+  <g transform="translate(1045,690)">
+    <rect class="noteBox" width="390" height="92" rx="12"/>
+    <text class="note" x="18" y="28">Aturan stok:</text>
+    <text class="note" x="18" y="50">Barang masuk menambah stok barang.</text>
+    <text class="note" x="18" y="72">Barang keluar mengurangi stok jika stok mencukupi.</text>
+  </g>
+</svg>
