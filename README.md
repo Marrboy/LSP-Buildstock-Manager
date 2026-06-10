@@ -38,6 +38,13 @@ Dokumentasi lengkap sesi 4, daftar halaman, file mentah, dan daftar capture ada 
 docs/SESI-4-DOKUMENTASI.md
 ```
 
+Panduan belajar kode, penjelasan fungsi tiap file, alur frontend-API-database,
+dan latihan perubahan studi kasus ada di:
+
+```text
+docs/PANDUAN-BELAJAR-KODE.md
+```
+
 ## Verifikasi
 
 ```bash
